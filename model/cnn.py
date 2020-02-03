@@ -169,9 +169,11 @@ def train_model(saved_name, csv_file):
 
     model.fit(X_train, y_train, validation_data=(X_test, y_test), batch_size=64, verbose=2, epochs=70)
     model.save("saved_models/" + saved_name + "70epochs.h5")
-    model_json = model.to_json()
-    with open("saved_models/" + saved_name + "70epochs.json", "w") as json_file:
-        json_file.write(model_json)
+
+    ####save another json
+    #model_json = model.to_json()
+    #with open("saved_models/" + saved_name + "70epochs.json", "w") as json_file:
+    #    json_file.write(model_json)
 
 
 '''
@@ -216,7 +218,7 @@ Test the model based on its ability to predict emotions.
 '''
 def test_model_emotion(load_name, use_binary_emotions):
     # loading json and model architecture
-    json_file = open("saved_models/" + load_name + ".json", "r")
+    json_file = open("saved_models/" + "cnn_model_4hidden" + ".json", "r")
     loaded_model_json = json_file.read()
     json_file.close()
     model = models.model_from_json(loaded_model_json)
