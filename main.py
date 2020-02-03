@@ -44,7 +44,7 @@ if __name__ == '__main__':
         train_model_emotion("arff_data_m_training.csv")
     elif args.mode == "test-normal_to_emotion":
         binary_emotions = True
-        test_model_emotion("test_modelspeakerNormalized", binary_emotions)
+        test_model_emotion("test_modelspeakerNormalized70epochs", binary_emotions)
     elif args.mode == "test-svm_real_emo_on_earnings":
         #"svm" classifier, else sgd classifier
         classifier = "sgd"
